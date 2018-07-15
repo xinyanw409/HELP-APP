@@ -1,0 +1,11 @@
+{
+	"db": {
+		"username": "ponerine",
+		"password": "ponerine1",
+		"host": "ds239359.mlab.com",
+		"port": "39359",
+		"name": "ponerinedb"
+    },
+	"sessionSecret": "esn user",
+	"jwtSecret": "jwt for esn"
+}

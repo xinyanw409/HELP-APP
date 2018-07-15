@@ -1,0 +1,11 @@
+{
+	"db": {
+		"username": "cheny",
+		"password": "e994e23e",
+		"host": "ds139138.mlab.com",
+		"port": "39138",
+		"name": "fse-cheny"
+    },
+	"sessionSecret": "esn user",
+	"jwtSecret": "jwt for esn"
+}

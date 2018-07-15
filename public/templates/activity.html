@@ -1,0 +1,57 @@
+<div class="postform container" ng-if="showRegisterActivity">
+    <div class="jumbotron jumbotron-cust">
+        <p>Tell us your email, so you will get notified before the event.</p>
+        <p ng-if="emailInvalid">*Please input valid email address.</p>
+        <input class="form-control text" type="email" ng-style="emailInvalid" ng-model="activityForm.email"></input>
+        <br>
+        <button type="button" class="btn btn-info left-button" ng-click="registerActivity()">Register</button>
+        <button type="button" class="btn btn-info right-button" ng-click="cancelRegister()">Cancel</button>
+    </div>
+</div>
+
+<div class="postform container" ng-if="noSpots">
+    <div class="jumbotron jumbotron-cust">
+        <p>There is no more spots. Register earlier next time!</p>
+        <button type="button" class="btn btn-info left-button" ng-click="closeAlert()">OK</button>
+    </div>
+</div>
+
+<div class="row bott">
+    <br>
+    <ul class="col-lg-8 post-main chatlist" id="msg">
+        <li class="card-left"  ng-if="canPostAnnouncement">
+            <button type="button" class="btn btn-info" ng-click="showPostActivityForm()">Post Activity</button>
+        </li>
+        <br>
+        <main ng-repeat="title in activities.slice(0,n) track by $index" role="main" class="card-left">
+            <li class="card card-cust">
+                <!-- style="border-width: 0" ng-style="{'background-color': activityDict[title].color}" -->
+                <div class="card-body body">
+                    <div>
+                        <span>
+                            <div class="activity-title">{{title}}</div>
+                            <div class="activity-time">Start Time: {{activityDict[title].startDate | date: "yyyy-MM-dd hh:mm:ss"}}</div>
+                            <div class="activity-time">End Time: {{activityDict[title].endDate | date: "yyyy-MM-dd hh:mm:ss"}}</div>
+                        </span>
+                    </div>
+                    <div class="activity-info" ng-if="activityDict[title].showDetails">Location: {{activityDict[title].location}}</div>
+                    <div class="activity-info" ng-if="activityDict[title].showDetails">Remaining Spots: {{activityDict[title].spots}}</div>
+                    <div class="activity-info" ng-if="activityDict[title].showDetails">Participants: {{activityDict[title].participants}}</div>
+                    <div class="para" ng-if="activityDict[title].showDetails">{{activityDict[title].description}}</div><br>
+                    <a href="" class="listname" ng-click="showDetailsAct(title)" ng-if="!activityDict[title].showDetails">details...</a>
+                    <a href="" class="listname" ng-click="showDetailsAct(title)" ng-if="activityDict[title].showDetails">hide</a>
+                    <div class="activityBottom">
+                        <hr class="hrc">
+                        <button type="button" class="btn btn-info" ng-if="!activityDict[title].isRegistered" ng-click="showRegisterPost(title)">Register</button>
+                        <button type="button" class="btn btn-info" ng-if="activityDict[title].isRegistered" ng-click="UnregisterPost(title)">Unregister</button>
+                    </div>
+                </div>
+            </li>
+            <br>
+        </main>
+        <li>
+            <a class="listname more-result" href="" ng-click="moreSearchResult()" ng-if="n<activities.length">more...</a>
+        </li>
+    </ul>
+
+</div>

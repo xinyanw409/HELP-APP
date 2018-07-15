@@ -1,0 +1,59 @@
+# Language setting http://docs.shippable.com/ci/languages/node/
+language: node_js
+node_js:
+  - "9.4.0"
+
+# use this to control what branches get built.
+# http://docs.shippable.com/ci/advancedOptions/branches/
+branches:
+  only:
+    - master
+    - activity
+    - chenyang
+    - token-based
+    - voice
+    
+    - map
+
+# using pre-defined build variables
+# full list http://docs.shippable.com/ci/advancedOptions/environmentVariables/
+env:
+  global:
+    - CODE_COVERAGE_DIR=$SHIPPABLE_REPO_DIR/coverage
+    - TESTS_LOC_DIR=$SHIPPABLE_REPO_DIR/test
+    - MOD_LOC=$SHIPPABLE_REPO_DIR/node_modules/.bin/
+    - MOCHA_FILE=shippable/testresults/result.xml
+
+build:
+  pre_ci:
+    - mkdir -p shippable/testresults
+    - mkdir -p shippable/codecoverage      
+
+  # http://docs.shippable.com/ci/shippableyml/#ci
+  ci:
+    # npm mirrors can sometimes be flacky, better to use shippable_retry
+    # http://docs.shippable.com/ci/advancedOptions/retry/
+    - shippable_retry npm install -g grunt-cli mocha istanbul
+    - shippable_retry npm install mocha-junit-reporter superagent
+    - shippable_retry npm install
+    # - grunt shippable
+    - grunt test
+    - grunt coverage
+
+  post_ci:
+    - ./node_modules/.bin/istanbul report cobertura --dir  shippable/codecoverage/
+
+
+# Integrations are used to connect external resources to CI
+# http://docs.shippable.com/integrations/overview/
+integrations:
+
+  # http://docs.shippable.com/ci/shippableyml/#notifications
+  notifications:
+  # turning of email for PR builds, get notified only on failure and change in status
+  # http://docs.shippable.com/integrations/notifications/email/
+    - integrationName: email
+      type: email
+      on_success: change
+      on_failure: always
+      on_pull_request: never

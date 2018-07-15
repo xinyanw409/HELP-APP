@@ -1,0 +1,119 @@
+@media (max-width: 767px) {
+    .chat_window {
+        width: 90%;
+        height: 550px;
+        transform: translateX(-30%) translateY(-60%);
+        margin-bottom: 20px;
+    }
+
+    .bottom_wrapper .send_message {
+      width: 60px;
+      height: 30px;
+      border-radius: 30px;
+    }
+
+    .bottom_wrapper .send_message .text {
+      font-size: 10px;
+      font-weight: bold;
+      line-height: 25px;
+      margin-bottom: 8px;
+    }
+
+    .bottom_wrapper .message_input_wrapper {
+      height: 30px;
+      width: calc(100% - 80px);
+    }
+
+    .messages .message .text_wrapper .text {
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    .bottom_wrapper .message_input_wrapper .message_input {
+        font-size: 12px;
+    }
+
+    .messages {
+        height: 400px;
+    }
+
+    .userlist {
+        max-width: 300px;
+        margin-left: 30px;
+    }
+
+    .chatlist {
+        max-width: 320px;
+        margin-left: 25px;
+    }
+
+    .logo {
+        width: 80px;
+        height: 49px;
+        margin-top: 10px;
+    }
+
+    .postform {
+        position: absolute;
+        top: 34%;
+        left: 0;
+        z-index: 2000;
+        width: 100%;
+    }
+
+    .card-cust {
+        width: 320px;
+        min-height: 100px;
+    }
+
+    .card-body {
+        padding: 0.8rem;
+    }
+
+    .card-left {
+        padding: 0;
+    }
+
+    .jumbotron-cust {
+        opacity: 1;
+    }
+
+    h5 {
+        font-size: 25px;
+    }
+
+    h4 {
+        font-size: 24px;
+    }
+
+    .btn-info {
+        margin-bottom: 10px;
+    }
+
+    .navbar-toggle-align {
+        width: 10%;
+        float: right;
+    }
+
+    .navbar-header {
+        width: 100%;
+    }
+
+    .more-result {
+        font-size: 20px;
+    }
+
+    #contact {
+      margin: 10px 0 10px 0;
+    }
+
+    .activity-title {
+        font-size: 30px;
+        font-weight: 500;
+        margin-bottom: 10px;
+    }
+
+    .private-chat-icon {
+        width: 20px;
+    }
+}

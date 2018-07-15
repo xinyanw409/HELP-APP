@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="4.053999999999999" tests="35" failures="0">
+  <testsuite name="Root Suite" timestamp="2018-03-25T16:44:01" tests="0" failures="0" time="0">
+  </testsuite>
+  <testsuite name="API TESTS: " timestamp="2018-03-25T16:44:01" tests="6" file="D:\ponerine\Collection\Git\Github\Course\18-652 FSE\s18-ESN-A1\test\test-api-1.js" failures="0" time="1.216">
+    <testcase name="API TESTS:  Can not assess wrong routing url" time="0.658" classname="Can not assess wrong routing url">
+    </testcase>
+    <testcase name="API TESTS:  Can assess login url" time="0.004" classname="Can assess login url">
+    </testcase>
+    <testcase name="API TESTS:  Should reject register if parameter not enough" time="0.007" classname="Should reject register if parameter not enough">
+    </testcase>
+    <testcase name="API TESTS:  Should reject register with existed username" time="0.543" classname="Should reject register with existed username">
+    </testcase>
+    <testcase name="API TESTS:  Should reject register if passwords do not match" time="0.003" classname="Should reject register if passwords do not match">
+    </testcase>
+    <testcase name="API TESTS:  Should register user with right response code" time="0.001" classname="Should register user with right response code">
+    </testcase>
+  </testsuite>
+  <testsuite name="API TESTS: " timestamp="2018-03-25T16:44:02" tests="4" file="D:\ponerine\Collection\Git\Github\Course\18-652 FSE\s18-ESN-A1\test\test-api-2.js" failures="0" time="0.002">
+    <testcase name="API TESTS:  Should login fail if input is not enough" time="0" classname="Should login fail if input is not enough">
+    </testcase>
+    <testcase name="API TESTS:  Should login fail with wrong username" time="0.001" classname="Should login fail with wrong username">
+    </testcase>
+    <testcase name="API TESTS:  Should login fail with wrong password" time="0.001" classname="Should login fail with wrong password">
+    </testcase>
+    <testcase name="API TESTS:  Should login in good with vaild password" time="0" classname="Should login in good with vaild password">
+    </testcase>
+  </testsuite>
+  <testsuite name="API TESTS: " timestamp="2018-03-25T16:44:03" tests="4" file="D:\ponerine\Collection\Git\Github\Course\18-652 FSE\s18-ESN-A1\test\test-api-3.js" failures="0" time="0.895">
+    <testcase name="API TESTS:  Should update status successfully" time="0.443" classname="Should update status successfully">
+    </testcase>
+    <testcase name="API TESTS:  Should get user list successfully" time="0.154" classname="Should get user list successfully">
+    </testcase>
+    <testcase name="API TESTS:  Should search using username successfully" time="0.152" classname="Should search using username successfully">
+    </testcase>
+    <testcase name="API TESTS:  Should search by status successfully" time="0.146" classname="Should search by status successfully">
+    </testcase>
+  </testsuite>
+  <testsuite name="API TESTS: " timestamp="2018-03-25T16:44:03" tests="4" file="D:\ponerine\Collection\Git\Github\Course\18-652 FSE\s18-ESN-A1\test\test-api-4.js" failures="0" time="0.741">
+    <testcase name="API TESTS:  Should post announcements successfully" time="0.299" classname="Should post announcements successfully">
+    </testcase>
+    <testcase name="API TESTS:  Should fail auth if no token" time="0.146" classname="Should fail auth if no token">
+    </testcase>
+    <testcase name="API TESTS:  Should fail auth if token is wrong" time="0.146" classname="Should fail auth if token is wrong">
+    </testcase>
+    <testcase name="API TESTS:  Should get announcements successfully" time="0.15" classname="Should get announcements successfully">
+    </testcase>
+  </testsuite>
+  <testsuite name="API TESTS: " timestamp="2018-03-25T16:44:04" tests="3" file="D:\ponerine\Collection\Git\Github\Course\18-652 FSE\s18-ESN-A1\test\test-api-5.js" failures="0" time="0.501">
+    <testcase name="API TESTS:  Should search announcement successfully" time="0.149" classname="Should search announcement successfully">
+    </testcase>
+    <testcase name="API TESTS:  Should chat public message successfully" time="0.188" classname="Should chat public message successfully">
+    </testcase>
+    <testcase name="API TESTS:  Should chat private message successfully" time="0.164" classname="Should chat private message successfully">
+    </testcase>
+  </testsuite>
+  <testsuite name="API TESTS: " timestamp="2018-03-25T16:44:05" tests="4" file="D:\ponerine\Collection\Git\Github\Course\18-652 FSE\s18-ESN-A1\test\test-api-6.js" failures="0" time="0.594">
+    <testcase name="API TESTS:  Should search private chat successfully" time="0.147" classname="Should search private chat successfully">
+    </testcase>
+    <testcase name="API TESTS:  Should search public chat successfully" time="0.145" classname="Should search public chat successfully">
+    </testcase>
+    <testcase name="API TESTS:  Should get public history successfully" time="0.153" classname="Should get public history successfully">
+    </testcase>
+    <testcase name="API TESTS:  Should get public history successfully" time="0.149" classname="Should get public history successfully">
+    </testcase>
+  </testsuite>
+  <testsuite name="DATABASE TESTS: " timestamp="2018-03-25T16:44:05" tests="1" file="D:\ponerine\Collection\Git\Github\Course\18-652 FSE\s18-ESN-A1\test\test-db.js" failures="0" time="0.002">
+    <testcase name="DATABASE TESTS:  Can connect db" time="0.002" classname="Can connect db">
+    </testcase>
+  </testsuite>
+  <testsuite name="Message Model TESTS: " timestamp="2018-03-25T16:44:05" tests="4" file="D:\ponerine\Collection\Git\Github\Course\18-652 FSE\s18-ESN-A1\test\test-messages.js" failures="0" time="0.101">
+    <testcase name="Message Model TESTS:  Can create a new message" time="0.002" classname="Can create a new message">
+    </testcase>
+    <testcase name="Message Model TESTS:  Can find one exact message" time="0.037" classname="Can find one exact message">
+    </testcase>
+    <testcase name="Message Model TESTS:  Can find by id successfully" time="0.03" classname="Can find by id successfully">
+    </testcase>
+    <testcase name="Message Model TESTS:  Can update successfully" time="0.032" classname="Can update successfully">
+    </testcase>
+  </testsuite>
+  <testsuite name="STATUS TESTS: " timestamp="2018-03-25T16:44:05" tests="1" file="D:\ponerine\Collection\Git\Github\Course\18-652 FSE\s18-ESN-A1\test\test-status.js" failures="0" time="0">
+    <testcase name="STATUS TESTS:  Status works" time="0" classname="Status works">
+    </testcase>
+  </testsuite>
+  <testsuite name="User Model TESTS: " timestamp="2018-03-25T16:44:05" tests="4" file="D:\ponerine\Collection\Git\Github\Course\18-652 FSE\s18-ESN-A1\test\test-user.js" failures="0" time="0.002">
+    <testcase name="User Model TESTS:  Can register a new user" time="0.001" classname="Can register a new user">
+    </testcase>
+    <testcase name="User Model TESTS:  Can retrive a new user" time="0" classname="Can retrive a new user">
+    </testcase>
+    <testcase name="User Model TESTS:  Can find a exact user by findOne" time="0" classname="Can find a exact user by findOne">
+    </testcase>
+    <testcase name="User Model TESTS:  Can retrive user by id" time="0.001" classname="Can retrive user by id">
+    </testcase>
+  </testsuite>
+</testsuites>

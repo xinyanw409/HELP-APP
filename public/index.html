@@ -1,0 +1,125 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Help!</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" type="image/png" href="images/icons/favicon.ico" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css">
+    <link rel="stylesheet" type="text/css" href="//cdn.rawgit.com/indrimuska/angular-moment-picker/master/dist/angular-moment-picker.min.css" >
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/chat-box.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/flat-ui.css">
+    <link rel="stylesheet" href="css/activity-form.css">
+    <link rel="stylesheet" href="css/radar.css">
+    <link rel="stylesheet" type="text/css" href="css/queries.css">
+    <link rel="stylesheet" href="css/iziToast.min.css">
+    <link rel="stylesheet" type="text/css" href="css/voiceButton.css">
+    <link rel="stylesheet" type="text/css" href="css/video.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+</head>
+
+<body ng-app="help">
+
+    <div ng-if="showNavi" ng-controller="NaviController">
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light panelcolor">
+            <div class="navbar-header">
+
+                <button type="button" class="navbar-toggle navbar-toggle-align" align="right" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                </button>
+                <span><img class="logo" src="../images/logo1.png" align="left"></span>
+            </div>
+
+            <div class="collapse navbar-collapse search" id="navbarTogglerDemo01" >
+                    
+                <div class="search" role="search" ng-controller="SearchController">
+                    <div class="input-group search" ng-if="canSearch">
+                        <input type="text" class="form-control" placeholder="{{searchContent}}" id="search-query-3" ng-model="searchQuery.query">
+                        <span class="input-group-btn">
+                            <button class="btn" ng-click="search()"><span class="fui-search"></span></button>
+                        </span>
+                        
+                    </div>
+                                    
+                </div>
+                <ul class="nav navbar-nav ">
+                    <li><a class="word search btn btn-link" ng-click="updateAnnouncements()" href="#!/announcement">Announcements</a></li>
+                    <li><a class="word search btn btn-link" ng-click="updatePublicWall()" href="#!/chatPublic">Public Wall</a></li>
+                    <li><a class="word search btn btn-link" ng-click="gotoShareStatus()" href="#!/status">Share Status</a></li>
+                    <li><a class="word search btn btn-link" ng-click="updateUserList()" href="#!/chatPrivate">User List</a></li>
+                    <li><a class="word search btn btn-link" ng-click="updateActivities()" href="#!/activity">Activity Area</a></li>
+                    <li><a class="word search btn btn-link" ng-click="map()" href="#!/map">Map</a></li>
+                    <li><a class="word search btn btn-link" ng-click="logout()" href="#!/login">Logout</a></li>
+                </ul>
+                
+            </div>
+        </nav>
+        <p class="noSearchResultAlert" ng-if="noSearchResult"> Your search did not match any results or are all stop words.</p>
+
+        <div class="postform container" ng-if="newMsgArrive&&alertNewMsg">
+            <div class="jumbotron jumbotron-cust">
+                <p>You have a new private message. Please check private chat.</p>
+                <br>
+                <button type="button" class="btn btn-info" ng-click="checkPrivateMsg()">Go to Private Chat</button>
+            </div>
+        </div>
+
+    </div>
+
+    
+
+    <ui-view></ui-view>
+
+    <br>
+    <br>
+
+    
+
+	<div id="dropDownSelect1"></div>
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.js"></script>       
+    <script src="//unpkg.com/@uirouter/angularjs/release/angular-ui-router.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment-with-locales.js"></script>
+    <script src="//cdn.rawgit.com/indrimuska/angular-moment-picker/master/dist/angular-moment-picker.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+	<script src="js/main.js"></script>
+    <script type="module" src="js/controllers/NaviController.js"></script>
+    <script type="module" src="js/controllers/chatPublicController.js"></script>
+    <script type="module" src="js/controllers/ChatPrivateController.js"></script>
+    <script type="module" src="js/controllers/PostAnnouncementController.js"></script>
+    <script type="module" src="js/controllers/ShareStatusController.js"></script>
+    <script type="module" src="js/controllers/SearchController.js"></script>
+    <script type="module" src="js/controllers/ActivityController.js"></script>
+    <script type="module" src="js/controllers/ProfileController.js"></script>
+    <script type="module" src="js/controllers/MapController.js"></script>
+    <script type="module" src="js/lib/encrypt.js"></script>
+    <script type="module" src="js/events.js"></script>
+    <script type="module" src="js/statusIcons.js"></script>
+    <script type="module" src="js/ClientSocket.js"></script>
+    <script type="module" src="js/reservedUsername.js"></script>
+    <script type="module" src="js/controllers/JoinCommunityController.js"></script>
+    <script src="js/lib/flat-ui.min.js"></script>
+    <script src="js/lib/application.js"></script>
+    <script src="js/xss-escape.js"></script>
+    <script src="js/iziToast.min.js" type="text/javascript"></script>
+
+    <script src="https://cdn.webrtc-experiment.com/RecordRTC.js"></script>
+    <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
+    <script type='text/javascript' src='https://cdn.scaledrone.com/scaledrone.min.js'></script>
+
+
+    <script src='./js/lib/ng-map.min.js'></script>
+    <script src="https://cdn.pubnub.com/sdk/javascript/pubnub.4.19.0.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?libraries=geometry&sensor=false&key=AIzaSyCWh1SZwtAgJH5c_CuwyDPj9PHIB3ha9ck"></script>
+</body>
+
+</html>
+

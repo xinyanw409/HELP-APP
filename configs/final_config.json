@@ -1,0 +1,11 @@
+{
+    "db": {
+        "username": "testuser",
+		"password": "testuser",
+		"host": "ds133321.mlab.com",
+		"port": "33321",
+		"name": "chatroom"
+    },
+    "sessionSecret": "esn user",
+	"jwtSecret": "jwt for esn"
+}

@@ -1,0 +1,43 @@
+
+	<div class="container-login100">
+		<div class="wrap-login100 p-l-55 p-r-55 p-t-80 p-b-30">
+			<form class="login100-form validate-form" role="form" name="registerForm">
+				<span class="login100-form-title p-b-37">
+					Are You Trying to Sign Up?
+				</span>
+
+				<div class="wrap-input100 validate-input m-b-20" ng-class="{'true-validate': !usernameInvalid&&registerForm.username.$dirty }">
+					<input class="input100" type="text" ng-model="myUsername" name="username" placeholder="username" disabled="disabled">
+					<span class="focus-input100"></span>
+					<span class="btn-hide-validate" ng-if="usernameInvalid">&#xf135;</span>
+				</div>
+
+				<div class="wrap-input100 validate-input m-b-25" ng-class="{ 'true-validate': !passwordInvalid&&registerForm.password.$dirty}">
+					<input class="input100" type="password" ng-model="myPassword" name="password" placeholder="password" disabled="disabled">
+					<span class="focus-input100"></span>
+					<span class="btn-hide-validate" ng-if="passwordInvalid">&#xf135;</span>
+				</div>
+
+				<div class="wrap-input100 validate-input m-b-25" ng-class="{'true-validate': registerForm.confirmPass.$dirty&&!confirmPassInvalid}">
+					<input class="input100" type="password" ng-model="confirmPass" name="confirmPass" placeholder="confirm password">
+					<span class="focus-input100"></span>
+					<span class="btn-hide-validate" ng-if="confirmPassInvalid">&#xf135;</span>
+				</div>
+
+				<div class="container-login100-form-btn">
+					<button class="login100-form-btn" ng-click="register()" >
+						Sign Up
+					</button>
+				</div>
+
+				<div class="text-center">
+					<a href="#!/login" class="txt2 hov1">
+						Sign In
+					</a>
+				</div>
+			</form>
+
+			
+		</div>
+	</div>
+

@@ -1,0 +1,248 @@
+
+/* Show it is fixed to the top */
+body {
+	/* background-color: #428555 !important; */
+	background-color: #ffffffff !important;
+}
+  
+.spacer {
+	width: 100%;
+	height: 30px;
+}
+
+.panelcolor {
+	/* background-color: #428555 !important; */
+	background-color: #ffffffff !important;
+	/* padding-top: 18px; */
+}
+
+.search {
+	margin-right: auto !important;
+}
+
+.word {
+	color: #000000 !important;
+}
+
+.username {
+    font-size: x-small;
+	font-family: Arial;
+	padding-top: 7px;
+	padding-left: 55px;
+	/* color: #14141f; */
+}
+
+.time {
+	font-size: x-small;
+	font-family: Arial;
+	padding-left: 55px;
+}
+
+.icon-left {
+	float: left;
+	width: 45px;
+	text-align: right;
+	margin: 2px 10px;
+	display: inline;
+  }
+  
+.icon-right {
+	float: left;
+	text-align: left;
+	margin: 2px 5px;
+	display: inline;
+}
+
+.image3{
+    width:45px;
+    height:45px;
+    border-radius:50px;
+}
+
+.para {
+    padding-top: 30px;
+}
+
+.header {
+	background-color:#e3eaf9;
+}
+
+.logo {
+	width:120px;
+    height:74px;
+}
+
+.btn-color {
+	background-color: #648bde !important;
+}
+
+div.circle {
+	display: inline-block;
+	width:3px;
+    height:3px;
+    border-radius:50px;
+	border: solid 3px #ff5050;
+	margin-bottom: 3px;
+  }  
+
+hr.hrc {
+	padding-bottom: 5px;
+}
+
+.heart {
+	cursor: pointer;
+	height: 30px;
+	width: 30px;
+	background-image:url('https://abs.twimg.com/a/1446542199/img/t1/web_heart_animation.png');
+	background-position:left;
+	background-repeat:no-repeat;
+	background-size:2900%;
+}
+
+.jumbotron {
+	text-align: center;
+	border-bottom: 1px solid #e5e5e5;
+	padding: 14px 24px;
+	font-size: 21px;
+	border-bottom: 0;
+}
+
+.post-main {
+	font-size: 18px;
+    line-height: 1.5;
+}
+
+.card-left {
+	padding-left: 5%;
+	padding-right: 15%;
+}
+
+.card-cust {
+	width: 630px;
+	min-height: 150px;
+}
+
+.list {
+	float: right; 
+}
+
+.bott {
+	z-index: -1;
+}
+
+.listname {
+	font-size: 18px;
+}
+
+.bottompart {
+	height: 40px;
+}
+
+.activityBottom {
+	height: 60px;
+}
+
+.postform {
+	position: absolute;
+	top: 34%;
+	left: 13%;
+	z-index: 2000;
+	width: 60%;
+}
+
+.text {
+	height: 200% !important;
+	opacity: 1 !important;
+	border-radius: 6px;
+}
+
+.jumbotron-cust {
+	padding: 14px 24px;
+	font-size: 21px;
+	border-bottom: 1px solid #e5e5e5;
+	opacity: 0.8;
+}
+
+a.disabled {
+    pointer-events: none;
+}
+
+.more-result {
+	font-size: 25px;
+	float: left; 
+	margin-left: 10px;
+}
+
+.noSearchResultAlert {
+	margin-left: 10px;
+	font-size: 15px;
+	color: #fc626a;
+}
+
+.private-chat-icon {
+	float: right;
+}
+
+.activity-form {
+	position: absolute;
+    top: 34%;
+    left: 0%;
+    width: 40%;
+    opacity: 1;
+}
+
+.left-button {
+	margin-right: 20px;
+}
+
+.right-button {
+	margin-left: 20px;
+}
+
+.activity-title {
+    font-size: 40px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.activity-time {
+    margin: 5px 0 15px;
+    font-size: 13px;
+    font-weight: 400;
+}
+
+.activity-info {
+	font-size: 15px;
+	padding-bottom: 10px;
+}
+
+input:invalid {
+  border-color: #fc626a;
+}
+ng-map { 
+    height: 400px;
+    margin: 20px 0;
+    border-radius: 5px;
+	border: 1px solid silver;
+	margin-top: 10px;
+}
+
+.map {
+	/* position: absolute; */
+	top: 24%;
+	/* left: 60%; */
+	/* width: 76%; */
+}
+
+.choice {
+	/* top: 10%; */
+	float: right;
+}
+
+.ss {
+	float: left;
+}
+
+.distance {
+	float: right;
+}

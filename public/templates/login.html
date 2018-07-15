@@ -1,0 +1,47 @@
+	<div class="container-login100">
+		<div class="wrap-login100 p-l-55 p-r-55 p-t-80 p-b-30">
+
+			<form class="login100-form validate-form" role="form" name="loginForm">
+				<span class="login100-form-title p-b-37">
+					Sign In
+				</span>
+
+				<span style="font-size: 15px; color: red" ng-if="wrongPassword">
+					Wrong username or password!
+				</span>
+
+				<span style="font-size: 15px; color: red" ng-if="usernameInvalid">
+					Username too short or is reserved.
+				</span>
+
+				<span style="font-size: 15px; color: red" ng-if="passwordInvalid">
+					Password too short. 
+				</span>
+
+				<div class="wrap-input100 validate-input m-b-20 " data-validate="Enter username" ng-class="{'true-validate': !usernameInvalid&&loginForm.username.$dirty }">
+					<input class="input100" type="text" ng-model="username" name="username" placeholder="username">
+					<span class="focus-input100"></span>
+					<span class="btn-hide-validate" ng-if="usernameInvalid">&#xf135;</span>
+				</div>
+
+				<div class="wrap-input100 validate-input m-b-25" data-validate = "Enter password" ng-class="{'true-validate': !passwordInvalid&&loginForm.password.$dirty }">
+					<input class="input100" type="password" ng-model="password" name="password" placeholder="password">
+					<span class="focus-input100"></span>
+					<span class="btn-hide-validate" ng-if="passwordInvalid">&#xf135;</span>
+				</div>
+
+				<div class="container-login100-form-btn">
+					<button class="login100-form-btn" ng-click="login()">
+						Sign In
+					</button>
+				</div>
+				<div class="wrap-pic-max-w wrap-pic-max-h " >
+					<img src="../images/icons/logo1.png"/>
+				</div>
+
+			</form>
+
+			
+		</div>
+	</div>
+	

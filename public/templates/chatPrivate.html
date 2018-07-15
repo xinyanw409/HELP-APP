@@ -1,0 +1,136 @@
+<div class="postform container" ng-if="showVoice">
+        <div class="jumbotron jumbotron-cust">
+                <img ng-src="../images/icons/icons8-play-64.png" id="btn-start-recording"/>
+                <img ng-src="../images/icons/icons8-pause-64.png" id="btn-stop-recording"/>
+                <img ng-src="../images/icons/icons8-send-64.png" id="btn-send-recording" ng-click="sendVoice()"/>
+            <button id="btn-release-microphone" disabled hidden>Release Microphone</button>
+            <button id="btn-encode-recording" disabled hidden>encode</button>
+            <img ng-src="../images/icons/icons8-cancel-64.png"  ng-click="recordVoice()"/>
+            <div id="myplayer"><audio controls controlsList="nodownload" class="foraudio"></audio></div>
+            <textarea hidden id="voice_input"></textarea>
+            <script src="../js/voice.js"></script>
+        </div>
+        
+</div>
+<div class="postform container" ng-if="showSearch">
+    <div class="jumbotron jumbotron-cust">
+        <p>Input a status name(OK, Help or Emergency) or an (part of) existing username...</p>
+        <p ng-if="moreThanOneWord" style="color: #ef7c77">Please input exactly one word!</p>
+        <textarea class="form-control text" rows="3" ng-model="search.content"></textarea>
+        <br>
+        <button type="button" class="btn btn-info left-button" ng-click="searchUser()">Search</button>
+        <button type="button" class="btn btn-info right-button" ng-click="cancelSearch()">Cancel</button>
+    </div>
+</div>
+<textarea id="voiceID" hidden></textarea>
+<textarea id="voiceShow" hidden></textarea>
+
+
+<div class="row bott" >
+    <br>
+
+    <ul class="col-lg-8 post-main">
+        <main ng-repeat="entry in searchResult.slice(0, n)" role="main" class="card-left" ng-if="isSearch">
+        <li class="card card-cust">
+            <div class="card-body body">
+                <div>
+                    <span><img class="image3" src="../images/pro.png" align="left"></span>
+                    <span>
+                        <div class="username">{{entry.author}}</div>
+                        <div class="time">{{entry.postDate | date: "yyyy-MM-dd hh:mm:ss"}}</div>
+                    </span>
+                </div>
+                <p class="para">{{entry.content}}</p>
+                 <div class="bottompart">
+                    <hr class="hrc">
+                    <div class="icon-left">
+                        <img ng-src="{{entry.statusIcon}}"/>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <br>
+        </main>
+        <li>
+            <a class="listname more-result" href="" ng-click="moreSearchResult()" ng-if="n<searchResult.length&&isSearch">more...</a>
+        </li>
+    </ul>
+
+
+    <div class="chat_window" ng-if="showPrivateChat">
+        <div class="top_menu">
+            <div class="buttons">
+                <div class="button close" ng-click="closePrivateChat()"></div>
+            </div>
+            <div class="title">{{privateDest}}</div>
+        </div>
+        <ul class="messages">
+            <li ng-repeat="message in privateMsgs" class="message {{message.side}} appeared ">
+                <div class="avatar">
+                </div>
+                <div class="text_wrapper" ng-if="message.isvoice == 'false'">
+                    <div class="text">{{(message.postDate | date: "yyyy-MM-dd hh:mm:ss") + ' [' + message.statusIcon + ']'}}<br>{{message.content}}</div>
+                </div>
+                <div class="text_wrapper" ng-if="message.isvoice == 'true'" >
+                    <div class="text">{{(message.postDate | date: "yyyy-MM-dd hh:mm:ss") + ' [' + message.statusIcon + ']'}} 
+                        <audio controls controlsList="nodownload" src="{{message.src}}"></audio>
+                    </div>
+                </div>
+                     
+            </li>
+        </ul>
+        <div class="bottom_wrapper clearfix">
+            <div class="message_input_wrapper">
+                <input class="message_input" type="text" ng-model="private.input" placeholder="Type your message here...">
+                <input hidden id="voice_input" type="text" placeholder="voice">
+            </div>
+            <div class="send_message" ng-click="sendPrivateMsg()">
+                    <div class="text">Send Text</div>
+            </div>
+            <img class="private-chat-icon" ng-src="../images/icons/icons8-microphone-64.png" ng-click="recordVoice()"/>
+
+        </div>
+    </div>
+
+    
+    <div class="col-lg-3 userlist">
+        
+        <div>
+            <button type="button" class="btn btn-info" ng-click="showSearchUser()">Search User</button>
+        </div>
+        <div class="sidebar-module sidebar-module-inset">
+            <br>
+            <h4 class="word">Directory</h4>
+        </div>
+        <p ng-if="noSearchUserResult">No matched users!</p>
+        <div class="sidebar-module" ng-if="!noSearchUserResult">
+            <h5>Online user</h5>
+            <ol class="list-unstyled">
+                <li ng-repeat="(username, user) in users">
+                  <div ng-if="(user.isActive || isAdmin) && user.accountStatus === 1" class="alert alert-secondary" role="alert">
+                    <div class="circle" ng-if="users[username].hasNewMsg"></div>
+                    <a class="listname">{{user.username}}</a>
+                    <img ng-src="{{user.statusIcon}}"/>
+                    <img ng-if="isAdmin" class="private-chat-icon" ng-src="../images/icons/profile.png" ng-click="editProfile(username)"/>
+                    <img class="private-chat-icon" ng-src="../images/icons/chat.png" ng-click="chatPrivate(username)"/>
+                  </div>
+                </li>
+            </ol>
+        </div>
+        <div class="sidebar-module" ng-if="!noSearchUserResult">
+            <h5>Offline user</h5>
+            <ol class="list-unstyled">
+                <li ng-repeat="(username, user) in users">
+                    <div ng-if="(user.isActive || isAdmin) && user.accountStatus === 2" class="alert alert-secondary" role="alert">
+                        <div class="circle" ng-if="users[username].hasNewMsg"></div>
+                        <a class="listname">{{user.username}}</a>
+                        <img ng-src="{{user.statusIcon}}"/>
+                        <img ng-if="isAdmin" class="private-chat-icon" ng-src="../images/icons/profile.png" ng-click="editProfile(username)"/>
+                        <img class="private-chat-icon" ng-src="../images/icons/chat.png" ng-click="chatPrivate(username)"/>
+                    </div>
+                </li>
+            </ol>
+        </div>
+    </div>
+
+</div>

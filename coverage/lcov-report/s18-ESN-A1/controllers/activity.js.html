@@ -1,0 +1,527 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for s18-ESN-A1/controllers/activity.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">all files</a> / <a href="index.html">s18-ESN-A1/controllers/</a> activity.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">72.04% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>67/93</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">63.89% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>23/36</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">60% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>6/10</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">74.44% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>67/90</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line medium'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">const User = require('../models/user');
+const Message = require('../models/message');
+const Activity = require('../models/activity');
+const Event = require('../socket/event');
+var CronJob = require('cron').CronJob;
+const nodemailer = require('nodemailer');
+const emailNotification = require('./emailNotification');
+&nbsp;
+var job = new CronJob('00 55 15 * * 0-6', <span class="fstat-no" title="function not covered" >function() {</span>
+  /* Runs every day at 09:30:00 AM. */
+<span class="cstat-no" title="statement not covered" >    console.log("running cron");</span>
+<span class="cstat-no" title="statement not covered" >    var now = Date.now();</span>
+<span class="cstat-no" title="statement not covered" >    var start = new Date(now + 1000*60*60*24);</span>
+<span class="cstat-no" title="statement not covered" >    var end = new Date(now + 1000*60*60*24*2);</span>
+<span class="cstat-no" title="statement not covered" >    Activity.find({startDate: {$lt: end, $gt: start}}).exec(<span class="fstat-no" title="function not covered" >function(err, activities) {</span></span>
+<span class="cstat-no" title="statement not covered" >        if (err) <span class="cstat-no" title="statement not covered" >throw err;</span></span>
+<span class="cstat-no" title="statement not covered" >        for (var i = 0; i &lt; activities.length; i++) {</span>
+<span class="cstat-no" title="statement not covered" >            var activity = activities[i];</span>
+<span class="cstat-no" title="statement not covered" >            var attendees = activity.attendees;</span>
+<span class="cstat-no" title="statement not covered" >            for (var j = 0; j &lt; attendees.length; j++) {</span>
+<span class="cstat-no" title="statement not covered" >                var myusername = attendees[j];</span>
+<span class="cstat-no" title="statement not covered" >                var content = emailNotification.generateEmailContent(activity, myusername);</span>
+<span class="cstat-no" title="statement not covered" >                User.findOne({username: myusername}, <span class="fstat-no" title="function not covered" >function (err, user) {</span></span>
+<span class="cstat-no" title="statement not covered" >                    if (user.email) {</span>
+<span class="cstat-no" title="statement not covered" >                        emailNotification.sendEmail(user.email, content, activity.title);</span>
+                    }
+                });
+&nbsp;
+            }
+        }
+    });
+&nbsp;
+  }, <span class="fstat-no" title="function not covered" >function () {</span>
+    /* This function is executed when the job stops */
+  },
+  false, /* Start the job right now */
+  'America/New_York' /* Time zone of this job. */
+);
+&nbsp;
+job.start();
+&nbsp;
+var getActivity = (req, res, next) =&gt; {
+    Activity.find().sort('-postDate').exec(function(err, activities) {
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (err) <span class="cstat-no" title="statement not covered" >throw err;</span>
+        res.status(200).json(activities);
+    });
+}
+&nbsp;
+var postActivity = (req, res, next) =&gt; {
+    var activity = req.body;
+    if(!activity.title || !activity.location || !activity.startDate 
+        || !activity.endDate || !activity.spots || !activity.description) {
+        return res.status(400).send({ message : 'data required'});
+    }
+    var title = activity.title.trim();
+    var location = activity.location.trim();
+    var startDate = activity.startDate;
+    var endDate = activity.endDate;
+    var spots = activity.spots;
+    var description = activity.description.trim();
+&nbsp;
+    // Avoid duplicate title
+    Activity.findOne({title: title}).exec(function(err, activity) {
+        <span class="missing-if-branch" title="if path not taken" >I</span>if(activity) {
+<span class="cstat-no" title="statement not covered" >            console.log('activity exists');</span>
+<span class="cstat-no" title="statement not covered" >            return res.status(400).send({exist: 1, message: "activity exists"});</span>
+        }
+        // Create activity
+        Activity.create({title: title, location: location, startDate: startDate, 
+            endDate: endDate, spots: spots, description: description}, function(err, activity) {
+            <span class="missing-if-branch" title="if path not taken" >I</span>if(err) {<span class="cstat-no" title="statement not covered" >return next(err);}</span>
+            var socketio = req.app.get('socketio');
+            console.log("emit new activity");
+            socketio.emit(Event.combine(Event.all, Event.activity), {msg: activity });
+            return res.status(200).send({message: 'post activity successful'});
+        });        
+    });
+&nbsp;
+    
+}
+&nbsp;
+var register = (req, res, next) =&gt; {
+    var title = req.body.title;
+    var email = req.body.email;
+    var myusername = req.username;
+&nbsp;
+    if (!title || !email) {
+        return res.status(400).send({message: 'data required'});
+    }
+&nbsp;
+    Activity.findOne({title: title}).exec(function(err, activity) {
+        User.findOne({username: myusername}, function (err, user) {
+            <span class="missing-if-branch" title="else path not taken" >E</span>if (user) {
+                user.email = email;
+                user.save();
+            } else {
+<span class="cstat-no" title="statement not covered" >                return res.status(400).send({message: 'user not found'});</span>
+            }
+&nbsp;
+            <span class="missing-if-branch" title="else path not taken" >E</span>if(activity) {
+                <span class="missing-if-branch" title="if path not taken" >I</span>if (activity.spots &lt; 1) {
+<span class="cstat-no" title="statement not covered" >                    return res.status(200).send({spot: 0, message: 'Not enough spots'});</span>
+                }
+                <span class="missing-if-branch" title="if path not taken" >I</span>if (activity.attendees.indexOf(myusername) != -1) {
+<span class="cstat-no" title="statement not covered" >                    return res.status(400).send({registered: 1, message: 'Already registered'});</span>
+                }
+                activity.attendees.push(myusername);
+                activity.spots = activity.spots - 1;
+                activity.save();
+                var socketio = req.app.get('socketio');
+                socketio.emit(Event.combine(Event.all, Event.updateActivity), {title: title, username: myusername});
+                return res.status(200).send({message: 'register success'});
+            } else {
+<span class="cstat-no" title="statement not covered" >                return res.status(400).send({message: 'activity not found'});</span>
+            }
+            
+        });
+        
+    });
+}
+&nbsp;
+var unregister = (req, res, next) =&gt; {
+    var title = req.body.title;
+    var myusername = req.username;
+&nbsp;
+    if (!title) {
+        return res.status(400).send({message: 'data required'});
+    }
+&nbsp;
+    Activity.findOne({title: title}).exec(function(err, activity) {
+        <span class="missing-if-branch" title="else path not taken" >E</span>if(activity) {
+            var index = activity.attendees.indexOf(myusername);
+            <span class="missing-if-branch" title="else path not taken" >E</span>if (index &gt; -1) {
+                activity.attendees.splice(index, 1);
+            } else {
+<span class="cstat-no" title="statement not covered" >                return res.status(400).send({registered: 0, message: 'not registered'});</span>
+            }
+            activity.spots = activity.spots + 1;
+            activity.save();
+            var socketio = req.app.get('socketio');
+            socketio.emit(Event.combine(Event.all, Event.updateActivity), {title: title, username: myusername});
+            return res.status(200).send({message: 'unregister success'});
+        } else {
+<span class="cstat-no" title="statement not covered" >            return res.status(400).send({message: 'activity not found'});</span>
+        }
+    });
+}
+&nbsp;
+module.exports = { 
+    register, 
+    getActivity, 
+    unregister,
+    postActivity
+};
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue Apr 24 2018 22:29:23 GMT-0400 (EDT)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

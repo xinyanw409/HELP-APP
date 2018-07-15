@@ -1,0 +1,36 @@
+<div class="activity-form container">
+    <div class="jumbotron jumbotron-cust" id="contact">
+        <h3>Edit {{profile.oldusername}}'s profile</h3>
+        <h4>*Fill in the fields that need to be changed.</h4>
+        <br>
+        <h4 ng-if="wrongEnd" style="color: #fc626a">*Username or password is too short.</h4>
+        <fieldset>
+            <input class="form-control text" ng-style="usernameInvalid" type="text" placeholder="New username" ng-model="profile.newusername"></input>
+        </fieldset>
+        <fieldset>
+            <input class="form-control text" ng-style="passwordInvalid" type="text" placeholder="New password" ng-model="profile.newpassword"></input>
+        </fieldset>
+        <fieldset>
+            <select class="form-control text" placeholder="Privilege" style="line-height: 100px;" ng-model="profile.privilege">
+                <option value="" selected disabled hidden>Change privilege</option>
+                <option value=0>Citizen</option>
+                <option value=1>Coordinator</option>
+                <option value=2>Administrator</option>
+            </select>
+        </fieldset>
+        <fieldset>
+            <div>
+                <input type="radio" id="active" name="isActive" value=1 ng-model="profile.isActive">
+                <label for="active">Active</label>
+                <input type="radio" id="inactive" name="isActive" value=0 ng-model="profile.isActive">
+                <label for="inactive">Inactive</label>
+            </div>
+            <!-- <label for="activeCheckbox">Active</label> -->
+            <br>
+        </fieldset>
+        <fieldset>
+            <button type="button" class="btn btn-info left-button" ng-click="postProfile()">Submit</button>
+            <button type="button" class="btn btn-info right-button" ng-click="cancel()">Cancel</button>
+        </fieldset>
+    </div>
+</div>

@@ -1,0 +1,30 @@
+<div class="activity-form container">
+    <div class="jumbotron jumbotron-cust" id="contact">
+        <h3>Post An Activity</h3>
+        <h4 ng-if="!wrongEnd">*All fields are required.</h4>
+        <h4 ng-if="wrongEnd" style="color: #fc626a">*End data cannot be earlier than start date or today.</h4>
+        <fieldset>
+            <input class="form-control text" ng-style="titleInvalid" type="text" placeholder="Title" ng-model="activityForm.title"></input>
+        </fieldset>
+        <fieldset>
+            <input class="form-control text" ng-style="locationInvalid" type="text" placeholder="Location" ng-model="activityForm.location"></input>
+        </fieldset>
+        <fieldset>
+            <input class="form-control text" moment-picker="ctrl.inputStart" ng-style="startInvalid" type="text" placeholder="Select a start date" ng-model="ctrl.startDate" ng-model-options="{ updateOn: 'blur' }"></input>
+        </fieldset>
+        <fieldset> 
+            <input class="form-control text" moment-picker="ctrl.inputEnd" ng-style="endInvalid" type="text" placeholder="Select a end date" ng-model="ctrl.endDate" ng-model-options="{ updateOn: 'blur' }"></input>
+        </fieldset>
+        <fieldset>
+            <input class="form-control text" ng-style="spotInvalid" placeholder="Number of spots" type="number" ng-model="activityForm.spots"></input>
+        </fieldset>
+        <fieldset>
+            <textarea class="form-control text" rows="5" ng-style="descInvalid" placeholder="Brief description" ng-model="activityForm.description"></textarea>
+            <br>
+        </fieldset>
+        <fieldset>
+            <button type="button" class="btn btn-info left-button" ng-click="postActivity()">Submit</button>
+            <button type="button" class="btn btn-info right-button" ng-click="cancel()">Cancel</button>
+        </fieldset>
+    </div>
+</div>

@@ -1,0 +1,16 @@
+
+<div class="postform container">
+    <div class="jumbotron jumbotron-cust">
+        <p>Select your status...</p>
+        <div>
+            <input type="radio" id="ok" name="status" value=1 ng-model="status.name">
+            <label for="ok">OK</label>
+            <input type="radio" id="help" name="status" value=2 ng-model="status.name">
+            <label for="help">HELP</label>
+            <input type="radio" id="emergency" name="status" value=3 ng-model="status.name">
+            <label for="emergency">EMERGENCY</label>
+        </div>
+        <p>{{statusExplanation[status.name]}}</p>
+        <button type="button" class="btn btn-info" ng-click="postStatus()">Post</button>
+    </div>
+</div>
